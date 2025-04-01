@@ -1,0 +1,6555 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+	<script>dataLayer = [{"http_referer": null, "current_time": "March, 31 2025 10:46:09", "user_first_name": "Sam", "user_last_name": "Butler", "user_subscriber_type": "academic", "email": "srb019@uark.edu", "remote_address": "12.156.224.195", "user_expiration_date": "May, 25 2025 00:00:00", "user_type": "masters", "user_subscriber_id": 44, "user_id": 513400, "script_name": "/pages/support/manuals-and-overviews/crsp/stocks-and-indices/overview-crsp-us-stock-database/", "instance": "wrds-www.wharton.upenn.edu", "logged_in": true, "user_subscriber_code": "uark", "user_name": "srb019", "environment": null, "auth_method": "", "site_version": 4}];</script>
+	<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({
+'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;
+j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5SZMJH');</script>
+<!-- End Google Tag Manager -->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Wharton Research Data Services" />
+	<meta name="copyright" content="&copy; 1993-2025 Wharton Research Data Services" />
+	<meta name="msvalidate.01" content="15761FA466F26B7A617FF162A10F17B1" />
+	<meta http-equiv="content-language" content="en-us">
+	<link rel="shortcut icon" type="image/png" href="/static/img/favicon.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/static/img/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/static/img/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/static/img/favicon-16x16.png">
+
+	
+
+	
+
+	
+		<link href="/static/css/bootstrap.css" rel="stylesheet">
+        <link href="/static/fontawesome-css/fontawesome.css" rel="stylesheet">
+	
+
+	
+		<!-- Rollbar JS Config -->
+<script type="text/javascript">
+    var _rollbarConfig = {
+        accessToken: "df0944f4403d4bb19d611e0e9530efc0",
+        captureUncaught: true,
+        captureUnhandledRejections: true,
+        payload: {
+            environment: "prod"
+        },
+        checkIgnore: function(isUncaught, args, payload) {
+            this.ignore = false;
+            ['\\/attribute-search\\/', 'script\\.crazyegg\\.com', 'chrome-extension:\\/\\/', '\\.google-analytics\\.com\\/g\\/collect'].forEach(function(regex) {
+                if (JSON.stringify(payload).match(regex)){
+                    this.ignore = true;
+                }
+            }, this);
+            return this.ignore;
+        }
+    };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rollbar.js/2.26.1/rollbar.min.js" integrity="sha512-LjZi6fbVsjD/CGE+DE4sgEl5UGOf/RJtBDfYT96rLqYY5Cp1Q0RlpJeLvoY/Jq6lc5qu0m2pfuom3HDXE6cwqw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- End Rollbar JS Config -->
+		<script type="text/javascript" src="/static/js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="/static/js/bootstrap.bundle.min.js"></script>
+	
+
+	
+	<link href="/static/wagtailkatex/katex/katex.min.css" type="text/css" media="all" rel="stylesheet">
+
+	
+		
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WRDS Overview of CRSP U.S. Stock Database">
+<meta name="twitter:description" content="WRDS Overview of CRSP U.S. Stock Database">
+
+
+
+
+<meta property="og:url" content="https://wrds-www.wharton.upenn.edu/pages/support/manuals-and-overviews/crsp/stocks-and-indices/overview-crsp-us-stock-database/">
+<meta property="og:title" content="WRDS Overview of CRSP U.S. Stock Database">
+<meta property="og:description" content="WRDS Overview of CRSP U.S. Stock Database">
+<meta property="og:site_name" content="WRDS">
+
+
+
+
+<meta itemprop="url" content="https://wrds-www.wharton.upenn.edu/pages/support/manuals-and-overviews/crsp/stocks-and-indices/overview-crsp-us-stock-database/">
+<meta itemprop="name" content="WRDS Overview of CRSP U.S. Stock Database">
+<meta itemprop="description" content="WRDS Overview of CRSP U.S. Stock Database">
+
+
+<title>WRDS Overview of CRSP U.S. Stock Database</title>
+<meta name="description" content="WRDS Overview of CRSP U.S. Stock Database">
+
+
+
+	
+
+	
+		
+		<meta name="keywords" content="overview, crsp">
+	
+
+</head>
+
+<body class="defaultTheme home  "  >
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SZMJH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<!--[if lte IE 11]>
+			<p class="browsehappy">You are using an <strong>outdated</strong> browser.
+			Please <a href="http://browsehappy.com/">upgrade your browser</a>
+			to improve your experience.
+			</p>
+	<![endif]-->
+
+<!--HIJACK-->
+
+
+	
+
+
+
+	
+	
+
+
+
+
+
+
+
+<div class="menu-overlay">
+    <ul id="mobile-navlink" role="tablist">
+        <li>
+            <div id="menu-icon-2">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </li>
+        
+            <li>
+                <a href="#" id="mobile-srch">
+                    <i class="fa fa-search"></i>
+                    <span class="sr-only">Search</span>
+                </a>
+            </li>
+        
+        <li>
+            <a href="/">
+                <i class="fa fa-home"></i>
+                <span class="sr-only">Home</span>
+            </a>
+        </li>
+        
+            <li>
+                <a href="#get-data-nav"
+                   aria-controls="get-data-nav"
+                   aria-label="get-data"
+                   role="tab"
+                   data-toggle="tab"
+                   class="overlay-link">
+                    <i class="fa fa-bar-chart"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="#analytics-nav"
+                   aria-controls="analytics-nav"
+                   aria-label="analytics"
+                   role="tab"
+                   data-toggle="tab"
+                   class="overlay-link">
+                    <i class="fa fa-area-chart"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="#classroom-nav"
+                   aria-controls="classroom-nav"
+                   aria-label="classroom"
+                   role="tab"
+                   data-toggle="tab"
+                   class="overlay-link">
+                    <i class="fa fa-graduation-cap"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="#videos-nav"
+                   aria-controls="videos-nav"
+                   aria-label="videos"
+                   role="tab"
+                   data-toggle="tab"
+                   class="overlay-link">
+                    <i class="fa fa-video-camera"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="#research-nav"
+                   aria-controls="research-nav"
+                   aria-label="research"
+                   role="tab"
+                   data-toggle="tab"
+                   class="overlay-link">
+                    <i class="fa fa-laptop"></i>
+                </a>
+            </li>
+        
+            <li>
+                <a href="#support-nav"
+                   aria-controls="support-nav"
+                   aria-label="support"
+                   role="tab"
+                   data-toggle="tab"
+                   class="overlay-link">
+                    <i class="fa fa-life-ring"></i>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+
+<nav class="header-nav
+ log-off  d-print-none">
+
+
+    <div class="top-nav pb-4 pb-md-0 pt-md-4">
+        <div class="container pt-4">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <div class="main-head position-relative">
+                        <div class="main-logo">
+                            <a href="/" title="WRDS Home"><img
+                                    src="/static/img/logo/Wharton_WRDS_logo.svg"
+                                    alt="Wharton wrds Logo"></a>
+                        </div>
+                        <div id="menu-icon">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="offset-3 col-6 offset-sm-4 col-sm-4 mt-4 d-block d-md-none">
+            
+        </div>
+    </div>
+
+    <div class="main-nav">
+
+        
+
+
+
+
+<div class="utility-wrap">
+		<ul class="utility-links list-unstyled">
+			<li class="utility-link">
+			
+			
+				<div class="btn-group-sm text-sm-center">
+					<!-- Allows screen readers and keyboard navigators to skip the header.
+					See https://www.a11yproject.com/posts/2013-05-11-skip-nav-links/ for more -->
+					<a class="btn btn-primary sr-only sr-only-focusable" href="#content">Skip to main content</a>
+			
+					
+					
+					
+					
+					<a class="btn btn-primary" href="/contact-support/" target="_blank">Contact</a>
+					<a aria-expanded="false" href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> Sam's Account <i class="fa fa-cog"></i> </a>
+					<ul class="dropdown-menu">
+						
+						
+						
+						<li><a href="/users/your-account/">Your Account Info</a></li>
+						<li><a href="/users/running/">Running Queries</a></li>
+						<li><a href="/users/saved/">Saved Queries & Codes</a></li>
+					</ul>
+					<a aria-expanded="false" href="/logout/" class="btn btn-primary"> Logout <i class="fa fa-sign-out"></i></a>
+				</div>
+			
+			</li>
+		</ul>
+</div>
+
+
+        
+            
+
+
+
+<div class="main-search pt-1">
+    <div class="container">
+        <!-- TODO Fix nav bar search -->
+        <form method="post" id="search" action="/search/">
+            <input type="hidden" name="csrfmiddlewaretoken" value="GvQco3ldfvToUo6KGoOZbwLEg1mgMoz9aeUipVYIdvEJLTU8KLTn90qRISLvQ3hf">
+            
+
+            <div class="input-group input-group-sm d-inline-flex main-srch">
+                <input type="text"
+                       id="searchbox"
+                       name="queryTerms"
+                       aria-label="Search WRDS"
+                       placeholder="Search WRDS"
+                       class="form-control"
+                       aria-describedby="basic-addon2">
+
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-info btn-sm input-group-text">
+                        <i class="fa fa-search" id="basic-addon2"></i>
+                        <span class="sr-only">Search</span>
+                    </button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+        
+
+        
+        <div role="tabpanel" class="main-panel ">
+            <div class="main-links ">
+                <div class="container">
+
+                    <ul class="nav nav-tabs justify-content-end" id="navlinks">
+                        
+                            
+                                <li class="nav-item">
+                                    <a aria-controls="get-data-nav"
+                                       role="tab"
+                                       data-toggle="tab"
+                                       href="#get-data-nav"
+                                       class="nav-link"
+                                       aria-expanded="false"
+                                    >
+                                        <i class="fa fa-bar-chart"></i>
+                                        Get Data
+                                        <i class="fa fa-caret-down"></i>
+                                    </a>
+                                </li>
+                            
+                        
+                            
+                                <li class="nav-item">
+                                    <a aria-controls="analytics-nav"
+                                       role="tab"
+                                       data-toggle="tab"
+                                       href="#analytics-nav"
+                                       class="nav-link"
+                                       aria-expanded="false"
+                                    >
+                                        <i class="fa fa-area-chart"></i>
+                                        Analytics
+                                        <i class="fa fa-caret-down"></i>
+                                    </a>
+                                </li>
+                            
+                        
+                            
+                                <li class="nav-item">
+                                    <a aria-controls="classroom-nav"
+                                       role="tab"
+                                       data-toggle="tab"
+                                       href="#classroom-nav"
+                                       class="nav-link"
+                                       aria-expanded="false"
+                                    >
+                                        <i class="fa fa-graduation-cap"></i>
+                                        Classroom
+                                        <i class="fa fa-caret-down"></i>
+                                    </a>
+                                </li>
+                            
+                        
+                            
+                                
+                                    
+                                        <li class="nav-item">
+                                            <a href="https://wrds-www.wharton.upenn.edu/pages/video-support/" class="nav-link">
+                                                <i class="fa fa-video-camera"></i>
+                                                Videos
+                                            </a>
+                                        </li>
+                                    
+                                
+                            
+                        
+                            
+                                
+                                    
+                                        <li class="nav-item">
+                                            <a href="https://wrds-www.wharton.upenn.edu/pages/wrds-research/" class="nav-link">
+                                                <i class="fa fa-laptop"></i>
+                                                Research
+                                            </a>
+                                        </li>
+                                    
+                                
+                            
+                        
+                            
+                                
+                                    
+                                        <li class="nav-item">
+                                            <a href="https://wrds-www.wharton.upenn.edu/pages/support/" class="nav-link">
+                                                <i class="fa fa-life-ring"></i>
+                                                Support
+                                            </a>
+                                        </li>
+                                    
+                                
+                            
+                        
+                    </ul>
+
+                    <script>
+                        $(document).ready(function () {
+                            $('.nav-link').click(function() {
+                                $('.nav-link').each(function() {
+                                    $(this).attr('aria-expanded', false);
+                                });
+                                $(this).attr('aria-expanded', true);
+                            });
+                        });
+                    </script>
+
+                </div>
+                
+                <div class="nav-content justify-content-center">
+                    <div class="tab-content">
+                        
+                            
+                                <div class="tab-pane nav-pane fade" id="get-data-nav"
+                                     role="tabpanel">
+                                    <div class="row">
+
+
+                                        
+
+
+
+
+
+
+
+<div class="col-md-6 col-lg-3">
+	
+		<ul class="no-bullet-list">
+			
+				
+					
+						
+	
+		<li class="sub-title">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/about/data-vendors/"
+					
+					>Vendors</a>
+		
+	
+		</li>
+	
+
+					
+				
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/get-data/center-research-security-prices-crsp/"
+					
+					
+			   title="The Center for Research in Security Prices, LLC (CRSP) maintains the most comprehensive collection of security price, return, and volume data for the NYSE, AMEX and NASDAQ stock markets. Additional CRSP files provide stock indices, beta-based and cap-based portfolios, treasury bond and risk-free rates, mutual funds, and real estate data."
+					>CRSP</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/get-data/compustat-capital-iq-standard-poors/"
+					
+					
+			   title="S&amp;P Global Market Intelligence Data Through Wharton Research Data Services"
+					>Compustat - Capital IQ</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/get-data/lseg-ibes/"
+					
+					
+			   title="IBES International Inc. created its Academic Research Program over 30 years ago to provide summary and individual analyst forecasts of company earnings, cash flows, and other important financial items, as well as buy-sell-hold recommendations. In 2000, IBES was integrated with Thomson Reuters (now LSEG) / First Call, and in 2012, First Call was discontinued."
+					>IBES</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/get-data/nyse-trade-and-quote/"
+					
+					
+			   title="The NYSE Trade and Quote (TAQ) database offers tick-by-tick trade and quote data of all activity within the U.S. National Market System. TAQ provides transaction information at the intraday level (to the microsecond) covering over 10,000 stock issues listed on 16 major American exchanges, including the New York Stock Exchange (NYSE), American Stock Exchange (AMEX), and Nasdaq."
+					>TAQ</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/get-data/wrds-sec-analytics-suite/"
+					
+					
+			   title="SEC Analytics Suite is positioned for broad business usage – from due diligence and forensic accounting to disclosure research and investment management."
+					>WRDS SEC Analytics Suite</a>
+		
+	
+		</li>
+	
+
+				
+			
+		</ul>
+	
+</div>
+                                        
+
+
+
+
+
+
+
+<div class="col-md-6 col-lg-3">
+	
+		<ul class="no-bullet-list">
+			
+				
+					
+						
+	
+		<li class="sub-title">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/about/data-vendors/"
+					
+					>Data Dictionary</a>
+		
+	
+		</li>
+	
+
+					
+				
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/data-dictionary/data-calendar/"
+					
+					
+			   title="Up-to-date information on the status, coverage, and frequency of updates for all datasets available on WRDS."
+					>Data Update Calendar</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/search/company-search/"
+					
+					>Find Companies</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/search/?activeTab=navVariablesSearchTab"
+					
+					>Find Variables</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/wrds-research/database-linking-matrix/"
+					
+					
+			   title="A summary of all the resources at WRDS that help link a company or person in one database with the same company or person in another database."
+					>Linking Databases</a>
+		
+	
+		</li>
+	
+
+				
+			
+		</ul>
+	
+</div>
+                                        
+
+
+
+
+
+
+
+<div class="col-md-6 col-lg-3">
+	
+		<ul class="no-bullet-list">
+			
+				
+					
+						
+	
+		<li class="sub-title">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/support/programming-wrds/"
+					
+					
+			   title="WRDS Data is easily accessible in your favorite programming language. Find out how to access WRDS through SAS, Python, R, MATLAB, and Stata. The connection methods available are listed under each language."
+					>PROGRAMS</a>
+		
+	
+		</li>
+	
+
+					
+				
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/support/programming-wrds/programming-sas/sas-web-sasstudio/"
+					
+					
+			   title="Learn how to use SAS to access WRDS Data from any web browser using SAS/Studio"
+					>SAS Studio</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/support/programming-wrds/programming-r/r-from-the-web/"
+					
+					
+			   title="Learn how to access WRDS data from a web browser through RStudio Server"
+					>R Studio</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/support/programming-wrds/programming-python/jupyterhub-wrds/"
+					
+					
+			   title="Learn how to access WRDS data from JupyterHub with Python from the WRDS website"
+					>JupyterHub</a>
+		
+	
+		</li>
+	
+
+				
+			
+		</ul>
+	
+</div>
+                                        
+
+
+
+
+
+
+
+<div class="col-md-6 col-lg-3">
+	
+		<ul class="no-bullet-list">
+			
+				
+					
+						
+	
+		<li class="sub-title">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/users/your-account/#web-queries"
+					
+					>YOUR QUERIES</a>
+		
+	
+		</li>
+	
+
+					
+				
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/users/running/"
+					
+					>Currently Running Queries</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/users/saved/"
+					
+					>Saved Queries</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/about/3-ways-use-wrds/"
+					
+					
+			   title="WRDS provides flexible delivery options, including Web Queries, the WRDS Cloud, and Remote Connections"
+					>Ways to use WRDS</a>
+		
+	
+		</li>
+	
+
+				
+			
+		</ul>
+	
+</div>
+
+                                    </div>
+                                    
+
+                                    
+                                        
+                                            <div class="col-md-12 direct-link">
+                                                <a href="https://wrds-www.wharton.upenn.edu/pages/get-data/"
+                                                   class="btn btn-primary"><i
+                                                        class="fa fa-bar-chart"></i>
+                                                    
+                                                        All Data
+                                                    <i class="fa fa-arrow-circle-right"></i></a>
+                                            </div>
+                                        
+                                    
+                                </div>
+                            
+                        
+                            
+                                <div class="tab-pane nav-pane fade" id="analytics-nav"
+                                     role="tabpanel">
+                                    <div class="row">
+
+
+                                        
+
+
+
+
+
+
+
+<div class="col-md-6 col-lg-3">
+	
+		<ul class="no-bullet-list">
+			
+				
+					
+						
+	
+		<li class="sub-title">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/analytics/?t=event-study"
+					
+					>Event Study</a>
+		
+	
+		</li>
+	
+
+					
+				
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/grid-items/us-daily-event-study-events-capital-iq/"
+					
+					>U.S. Daily Event Study</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/grid-items/intl-event-study-comp-global-events-ciq/"
+					
+					>International Event Study (Compustat Global)</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/grid-items/intl-event-study-global-ins-upload-your-events/"
+					
+					>International Event Study (Global Insight)</a>
+		
+	
+		</li>
+	
+
+				
+			
+		</ul>
+	
+</div>
+                                        
+
+
+
+
+
+
+
+<div class="col-md-6 col-lg-3">
+	
+		<ul class="no-bullet-list">
+			
+				
+					
+						
+	
+		<li class="sub-title">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/analytics/?t=other-research-tools"
+					
+					>Other Research Tools</a>
+		
+	
+		</li>
+	
+
+					
+				
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/grid-items/beta-suite-wrds/"
+					
+					>Beta Suite by WRDS</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/grid-items/cusip-converter/"
+					
+					>CUSIP Converter</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/analytics/wrds-research-backtester/"
+					
+					>WRDS Backtester</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/classroom/company-profiles/"
+					
+					>Company Profiles</a>
+		
+	
+		</li>
+	
+
+				
+			
+		</ul>
+	
+</div>
+                                        
+
+
+
+
+
+
+
+<div class="col-md-6 col-lg-3">
+	
+		<ul class="no-bullet-list">
+			
+				
+					
+						
+	
+		<li class="sub-title">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/analytics/?t=sec"
+					
+					>SEC</a>
+		
+	
+		</li>
+	
+
+					
+				
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/analytics/sec-analytics-suite-wrds/wrds-insiders/"
+					
+					>WRDS Insider</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/grid-items/sec-filings-search2/"
+					
+					>SEC Filings Search</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/grid-items/readability-and-sentiment-analysis/"
+					
+					>Readability and Sentiment Analysis</a>
+		
+	
+		</li>
+	
+
+				
+			
+		</ul>
+	
+</div>
+                                        
+
+
+
+
+
+
+
+<div class="col-md-6 col-lg-3">
+	
+		<ul class="no-bullet-list">
+			
+				
+					
+						
+	
+		<li class="sub-title">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/analytics/?t=financial-ratios"
+					
+					>Financial Ratios</a>
+		
+	
+		</li>
+	
+
+					
+				
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/grid-items/financial-ratios-firm-level/"
+					
+					>Firm Level</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/grid-items/financial-ratio-industry-level/"
+					
+					>Industry Level</a>
+		
+	
+		</li>
+	
+
+				
+			
+		</ul>
+	
+</div>
+
+                                    </div>
+                                    
+
+                                    
+                                        
+                                            <div class="col-md-12 direct-link">
+                                                <a href="https://wrds-www.wharton.upenn.edu/pages/analytics/"
+                                                   class="btn btn-primary"><i
+                                                        class="fa fa-area-chart"></i>
+                                                    
+                                                        Analytics
+                                                    <i class="fa fa-arrow-circle-right"></i></a>
+                                            </div>
+                                        
+                                    
+                                </div>
+                            
+                        
+                            
+                                <div class="tab-pane nav-pane fade" id="classroom-nav"
+                                     role="tabpanel">
+                                    <div class="row">
+
+
+                                        
+
+
+
+
+
+
+
+<div class="col-md-6 col-lg-3">
+	
+		<ul class="no-bullet-list">
+			
+				
+					
+						
+	
+		<li class="sub-title">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/classroom/?t=introduction-to-wrds"
+					
+					>INTRO TO WRDS</a>
+		
+	
+		</li>
+	
+
+					
+				
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/grid-items/getting-started/"
+					
+					>Getting Started</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/grid-items/what-data-wrds/"
+					
+					>What Data is in WRDS?</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/grid-items/finding-data-you-want/"
+					
+					>Finding the Data</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/grid-items/understanding-identifiers/"
+					
+					>Understanding Identifiers</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/grid-items/using-sas-studio/"
+					
+					>Using SAS Studio</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/classroom/company-profiles/"
+					
+					>Company Profiles</a>
+		
+	
+		</li>
+	
+
+				
+			
+		</ul>
+	
+</div>
+                                        
+
+
+
+
+
+
+
+<div class="col-md-6 col-lg-3">
+	
+		<ul class="no-bullet-list">
+			
+				
+					
+						
+	
+		<li class="sub-title">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/classroom/?t=accounting"
+					
+					>ACCOUNTING</a>
+		
+	
+		</li>
+	
+
+					
+				
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/grid-items/gaap-financial-statements/"
+					
+					>Intro to Financial Statements</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/grid-items/income-statement/"
+					
+					>Income Statement</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/grid-items/balance-sheet/"
+					
+					>Balance Sheet</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/grid-items/cash-flow-statement/"
+					
+					>Statement of Cash Flows</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/grid-items/linking-financial-statements/"
+					
+					>Linking Financial Statements</a>
+		
+	
+		</li>
+	
+
+				
+			
+		</ul>
+	
+</div>
+                                        
+
+
+
+
+
+
+
+<div class="col-md-6 col-lg-3">
+	
+		<ul class="no-bullet-list">
+			
+				
+					
+						
+	
+		<li class="sub-title">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/classroom/?t=investments"
+					
+					>INVESTMENTS</a>
+		
+	
+		</li>
+	
+
+					
+				
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/grid-items/beta-visualization/"
+					
+					>Beta Visualization</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/grid-items/market-and-firm-specific-risk/"
+					
+					>Market and Firm-Specific Risk</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/grid-items/capm-equity-valuation/"
+					
+					>CAPM Equity Valuation</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/grid-items/mechanics-diversification/"
+					
+					>Mechanics of Diversification</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/grid-items/portfolio-diversification/"
+					
+					>Portfolio Diversification</a>
+		
+	
+		</li>
+	
+
+				
+			
+		</ul>
+	
+</div>
+                                        
+
+
+
+
+
+
+
+<div class="col-md-6 col-lg-3">
+	
+		<ul class="no-bullet-list">
+			
+				
+					
+						
+	
+		<li class="sub-title">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/classroom/?t=syllabi"
+					
+					>SYLLABI</a>
+		
+	
+		</li>
+	
+
+					
+				
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/syllabi/fundamentals-accounting-syllabus/"
+					
+					>Accounting</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/syllabi/fundamentals-investing-syllabus/"
+					
+					>Finance</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/syllabi/fundamentals-macroeconomics-syllabus/"
+					
+					>Macroeconomics</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/syllabi/text-analytics/"
+					
+					>Text Analytics</a>
+		
+	
+		</li>
+	
+
+				
+			
+		</ul>
+	
+		<ul class="no-bullet-list">
+			
+				
+					
+						
+	
+		<li class="sub-title">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/classroom/"
+					
+					>OTHER TOPICS</a>
+		
+	
+		</li>
+	
+
+					
+				
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/classroom/?t=macroeconomics"
+					
+					>Macroeconomics</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/classroom/?t=sec"
+					
+					>SEC</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/classroom/?t=text-analytics"
+					
+					>Text Analytics</a>
+		
+	
+		</li>
+	
+
+				
+			
+		</ul>
+	
+</div>
+
+                                    </div>
+                                    
+
+                                    
+                                        
+                                            <div class="col-md-12 direct-link">
+                                                <a href="https://wrds-www.wharton.upenn.edu/pages/classroom/"
+                                                   class="btn btn-primary"><i
+                                                        class="fa fa-graduation-cap"></i>
+                                                    
+                                                        Full Catalog
+                                                    <i class="fa fa-arrow-circle-right"></i></a>
+                                            </div>
+                                        
+                                    
+                                </div>
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+</nav>
+
+	
+
+
+
+	<div class="main-breadcrumb">
+		<div class="container">
+			<div>
+				<nav aria-label="breadcrumb">
+				  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/" class="breadcrumb-item bc-home"><i class="fa fa-home"></i> <span>Home</span></a></li>
+					
+  
+    <li class="breadcrumb-item "><a class="breadcrumb-item" href="https://wrds-www.wharton.upenn.edu/pages/support/">Support</a></li>
+  
+    <li class="breadcrumb-item "><a class="breadcrumb-item" href="https://wrds-www.wharton.upenn.edu/pages/support/manuals-and-overviews/">Manuals and Overviews</a></li>
+  
+    <li class="breadcrumb-item "><a class="breadcrumb-item" href="https://wrds-www.wharton.upenn.edu/pages/support/manuals-and-overviews/crsp/">CRSP</a></li>
+  
+    <li class="breadcrumb-item "><a class="breadcrumb-item" href="https://wrds-www.wharton.upenn.edu/pages/support/manuals-and-overviews/crsp/stocks-and-indices/">Stocks and Indices</a></li>
+  
+    <li class="breadcrumb-item  active">WRDS Overview of CRSP U.S. Stock Database</li>
+  
+
+
+
+					</ol>
+				</nav>
+			</div>
+			<div class="bc-right">
+				
+				
+			</div>
+		</div>
+	</div>
+	
+	
+
+
+
+<main id="content" role="main" class="">
+	<div id="main-body" class="main-section">
+		
+		<div class="container">
+			
+
+
+		</div>
+
+		<div class="container page-wrapper-container ">
+
+		
+    
+
+
+
+	
+
+
+
+
+
+<div class="row">
+	
+		<div class="col-12">
+			<a name="top"></a>
+			<h1 class="page-header">WRDS Overview of CRSP U.S. Stock Database</h1>
+		</div>
+	
+
+	<div class="col-12 col-lg-8">
+		<section>
+
+			
+
+
+
+
+
+
+
+
+	<!-- No alerts  -->
+
+
+			
+				<p class="lead">The CRSP Stock database provides stock prices, returns, and event information.</p>
+			
+
+			
+				
+			
+
+			
+				<!-- No extra_body_top content -->
+			
+
+			
+
+				
+					
+						
+						
+						
+
+<section class="m-top10 m-bottom30">
+	<header>
+		<a name="introduction"></a>
+		<h2>Introduction</h2>
+
+	</header>
+	
+
+
+  <p data-block-key="xn2fb">The CRSP U.S. Stock database contains end-of-day and month-end prices on primary listings for the <strong>NYSE</strong>, <strong>NYSE MKT</strong>, <strong>NASDAQ</strong>, and <strong>Arca</strong> exchanges, along with basic market indices. CRSP databases are characterized by their comprehensive corporate action information and highly accurate total return calculations.</p>
+
+  <div style="padding-bottom: 62.5%;" class="responsive-object">
+    <iframe src="https://player.vimeo.com/video/417301517?app_id=122963" width="384" height="240" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+</div>
+
+
+
+
+	
+		<p align="right"><a class="btn btn-primary btn-sm" href="#introduction">Top of Section</a></p>
+	
+</section>
+
+
+					
+						
+						
+						
+
+<section class="m-top10 m-bottom30">
+	<header>
+		<a name="coverage"></a>
+		<h2>Coverage</h2>
+
+	</header>
+	
+
+
+  
+
+	
+		<ul class="cta-links ">
+	
+
+	
+	
+		<li class="">
+	
+		
+			<a class="default-fa"
+			   href="https://wrds-www.wharton.upenn.edu/pages/grid-items/crsp-coverage/"
+					
+					>CRSP Coverage Video</a>
+		
+	
+		</li>
+	
+
+
+	
+		</ul>
+	
+
+
+
+  <p data-block-key="fyrg4">All securities listed in CRSP U.S. Stock databases are <strong>equity</strong> securities, not bonds. CRSP U.S. Stock databases do not include securities for international companies (i.e. Canadian companies) - unless they are ADRs, cross-listed, or traded on the major stock exchanges mentioned above. CRSP data do not include ETNs, OTC securities or preferred ADRs.</p><p data-block-key="vj5wt">CRSP U.S. Stock database contains the following information:</p><ul><li data-block-key="7lltl">Price and quote data (e.g. Open, close, bid/low, ask/high, trade-only).</li><li data-block-key="618vk">Holding period returns with and without dividends.</li><li data-block-key="eiso3">Excess returns and other derived data items.</li><li data-block-key="goe6g">Market capitalization.</li><li data-block-key="q9gwh">Shares outstanding.</li><li data-block-key="2o3c3">Trading volume.</li><li data-block-key="ritry">Security delisting information.</li><li data-block-key="bikbn">Corporate actions.</li><li data-block-key="tml96">Identifiers, descriptors, and supplemental data items.</li></ul><p data-block-key="tp0sf"></p><p data-block-key="ofl48">CRSP U.S. Stock <strong>data coverage for the various exchanges</strong> includes:</p><ul><li data-block-key="6eywm">NYSE: All data series begin on December 31, 1925.</li><li data-block-key="nmpwy">NYSE MKT: All data series begin on July 2, 1962.</li><li data-block-key="dri7p">NASDAQ: All data series begin on December 14, 1972.</li><li data-block-key="8t8gj">Arca: All data series begin March 8, 2006.</li></ul><p data-block-key="duz2z">The <strong>market indices</strong> cover:</p><ul><li data-block-key="ylcv8">Equal and value-weighted returns for CRSP NYSE, NYSE MKT, NASDAQ, and Arca - with and without dividends.</li><li data-block-key="5i51o">Composite Indices for S&amp;P 500 and NASDAQ.</li></ul><p data-block-key="7sod6">For S&amp;P 500 constituent data, <a href="https://wrds-www.wharton.upenn.edu/pages/support/data-overview/overview-crsp-indices-wrds/">refer to to the CRSP Indices product</a>.</p><p data-block-key="tl6qc"></p><p data-block-key="ycp4c"><strong>At the share type (SHRCD) level</strong>, CRSP U.S. Stock includes:</p><ul><li data-block-key="97qzb">Common Stocks.</li><li data-block-key="kout4">Certificates.</li><li data-block-key="57vow">ADRs.</li><li data-block-key="wuuix">Shares of Beneficial Interest.</li><li data-block-key="v5yq8">Units (e.g. Depository Units, Units of Beneficial Interest, Units of Limited Partnership Interest, Depository Receipts).</li><li data-block-key="kusib">ETFs.</li><li data-block-key="qztww">Closed-End Mutual Funds.</li><li data-block-key="zpuac">Foreign companies traded on NYSE, NYSE MKT, NASDAQ, and NYSE Arca.</li><li data-block-key="ih2oo">Americus Trust Components (Primes and Scores).</li><li data-block-key="pysxx">HOLDRs Trusts.</li><li data-block-key="luhwk">REITs (Real Estate Investment Trusts).</li></ul><p data-block-key="m3o00">For additional information, refer to the &quot;Share Codes Security Type&quot; section of this overview.</p><p data-block-key="jaxlm"></p><p data-block-key="lbqc8">Lastly, CRSP U.S. Stock database <strong>excludes</strong>:</p><ul><li data-block-key="wwtf4">Rights and warrants.</li><li data-block-key="who0c">Preferred shares.</li><li data-block-key="vtywa">Units representing common stocks bundled with rights or warrants.</li><li data-block-key="tsaep">Over the Counter Bulletin Board Issues.</li><li data-block-key="2lt3k">When Issued Trading.</li></ul>
+
+
+
+	
+		<p align="right"><a class="btn btn-primary btn-sm" href="#coverage">Top of Section</a></p>
+	
+</section>
+
+
+					
+						
+						
+						
+
+<section class="m-top10 m-bottom30">
+	<header>
+		<a name="data-collection-process"></a>
+		<h2>Data Collection Process</h2>
+
+	</header>
+	
+
+
+  <p data-block-key="ov3x7">CRSP U.S. Stock database is collected from multiple sources. For recent years, it is collected from Interactive Data Corporation (IDC). For more information, please refer to pages 1-2 of <a href="https://wrds-www.wharton.upenn.edu/pages/support/manuals-and-overviews/crsp/stocks-and-indices/">Stock &amp; Indices Documentation</a>.</p>
+
+
+
+	
+		<p align="right"><a class="btn btn-primary btn-sm" href="#data-collection-process">Top of Section</a></p>
+	
+</section>
+
+
+					
+						
+						
+						
+
+<section class="m-top10 m-bottom30">
+	<header>
+		<a name="dataset-organization"></a>
+		<h2>Dataset Organization</h2>
+
+	</header>
+	
+
+
+  <h3 id="file-location-description">File Location Description</h3>
+
+
+  <p data-block-key="7pi74">The table below lists all CRSP U.S. Stock products available on WRDS, as well as their respective SAS and Unix locations. For further information, visit the individual product pages on WRDS.</p>
+
+  <h3 id="file-location-table">File Location Table</h3>
+
+
+  <p data-block-key="sdoi5">Table 1: Datafile Locations</p>
+
+  <table class="table table-striped table-hover table-bordered table-mobile tablesorter tablesorter-default">
+    
+        <thead>
+        <tr>
+            
+                <th>
+                    
+                        
+                            Product
+                        
+                    
+                </th>
+            
+                <th>
+                    
+                        
+                            Primary SAS Libname
+                        
+                    
+                </th>
+            
+                <th>
+                    
+                        
+                            Alternate SAS Libname
+                        
+                    
+                </th>
+            
+                <th>
+                    
+                        
+                            Unix Location
+                        
+                    
+                </th>
+            
+        </tr>
+        </thead>
+    
+    <tbody>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                CSRP U.S. Stock- Annual Update
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                crsp
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                crspa
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                /wrds/crsp/sasdata/a_stock
+                            
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                CRSP U.S. Stock - Quarterly Update
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                crspq
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                crspq
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                /wrds/crsp/sasdata/q_stock
+                            
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                CRSP U.S. Stock - Monthly Update
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                crspm
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                crspm
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                /wrds/crsp/sasdata/m_stock
+                            
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                CSRP U.S. Stock- 1962 Annual Update
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                crsp
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                crspa
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                /wrds/crsp/sasdata/a_stock62
+                            
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                CRSP U.S. Stock 1962 - Quarterly Update
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                crspq
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                crspq
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                /wrds/crsp/sasdata/q_stock62
+                            
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                CRSP U.S. Stock 1962 - Monthly Update
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                crspm
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                crspm
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                /wrds/crsp/sasdata/m_stock62
+                            
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+    </tbody>
+</table>
+
+
+  <p data-block-key="kzstp"><strong>CRSP 1962</strong> U.S. Stock datasets are <strong>a subset</strong> of the regular CRSP U.S. Stock database that start in 1962, compared to the full database which starts in 1925.</p><p data-block-key="ac4d4">CRSP <strong>annual products are updated</strong> each year <strong>in February</strong>, and consist of data for the entire previous year.</p>
+
+  <h3 id="datasets-created-by-wrds">Datasets Created by WRDS</h3>
+
+
+  <p data-block-key="g108f">WRDS maintains the original event tables that come from CRSP (DSE/MSE) and also creates DSEALL, MSEALL, and Stocknames to present the information in different ways. See the note on event tables for more information.</p>
+
+
+
+	
+		<p align="right"><a class="btn btn-primary btn-sm" href="#dataset-organization">Top of Section</a></p>
+	
+</section>
+
+
+					
+						
+						
+						
+
+<section class="m-top10 m-bottom30">
+	<header>
+		<a name="linking"></a>
+		<h2>Linking</h2>
+
+	</header>
+	
+
+
+  <h3 id="identifiers-used">Identifiers Used</h3>
+
+
+  <p data-block-key="bz7g6">The primary identifiers in CRSP are <code>PERMNO</code> and <code>PERMCO</code>. They are historical identifiers, and allow users to trace companies and securities over time. Both <code>PERMNO</code> and <code>PERMCO</code> are assigned by CRSP. It is helpful to know that a company (PERMCO) can have multiple securities (PERMNO) at the same time.</p><p data-block-key="gf056"><code>PERMNO</code> is a unique <strong>permanent security identification number</strong> assigned by CRSP to each security. PERMNO is currently a 5-digit integer for all common securities in the CRSP files. Unlike <code>CUSIP</code>, Ticker Symbol, and Company Name, a <code>PERMNO</code> does not change during an issue&#x27;s trading history, nor is it reassigned after an issue ceases trading. This <strong>allows users to track a security through its entire trading history</strong> in CRSP files with a single <code>PERMNO</code>, regardless of name or capital structure changes. It is useful to know Stock data are sorted and indexed by this field.</p><p data-block-key="igj4f"><code>PERMCO</code> is a unique <strong>permanent company identification number</strong> assigned by CRSP to all companies with issues on a CRSP File. This number is permanent for all securities issued by this company regardless of name changes.</p><p data-block-key="8a875">Aside from these to identifiers, the Monthly Stock files (commonly referred to as &quot;msf&quot;) and Daily Stock files (i.e. &quot;dsf&quot;) additionally contain header CUSIP identifiers (<code>CUSIP</code>) - but not Ticker or historical CUSIP (<code>NCUSIP</code>) information. The WRDS web query forms for these datasets merge the information on the fly. Refer to tables <code>mse/dse</code>, <code>mseall/dseall</code>, <code>dsenames/msenames</code> or <code>stocknames</code> for retrieval; additional information about these specific tables can be found below.</p><p data-block-key="ys7va">The following list provides information on how to link CRSP with other databases.</p>
+
+  <p data-block-key="3nsqn"><strong>Database Linking InformationCOMPUSTAT (with CRSP CCM subscription)</strong><br/> <a href="https://wrds-www.wharton.upenn.edu/pages/support/data-overview/wrds-overview-crspcompustat-merged-ccm/">CRSP/COMPUSTAT Merged (CCM) Overview</a></p><p data-block-key="l09yf"><strong>Audit Analytics</strong><br/> <a href="https://wrds-www.wharton.upenn.edu/pages/support/support-articles/auditanalytics/merging-data-auditanalytics-crsp-and-compustat/">AuditAnalytics with CRSP and Compustat</a></p><p data-block-key="gcyu0"><strong>Bank Regulatory</strong><br/> <a href="https://wrds-www.wharton.upenn.edu/pages/support/support-articles/bank-regulatory/bank-regulatory-dataset-linking-crsp/">Bank Regulatory Dataset: Linking with CRSP</a></p><p data-block-key="c49qu"><strong>Blockholders</strong><br/> <a href="https://wrds-www.wharton.upenn.edu/pages/support/support-articles/blockholders/linking-blockholders-crsp/">Linking Blockholders to CRSP</a></p><p data-block-key="ezpp0"><strong>TAQ</strong><br/> <a href="https://wrds-www.wharton.upenn.edu/pages/wrds-research/macros/wrds-macro-tclink/">WRDS Research Macro: TCLINK</a></p><p data-block-key="m6gx6"><strong>OptionMetrics</strong><br/> <a href="https://wrds-www.wharton.upenn.edu/pages/wrds-research/macros/wrds-macro-oclink/">WRDS Research Macro: OCLINK</a></p>
+
+  <p data-block-key="l68z3">For other databases not listed here, <strong>always use</strong> <strong><code>CUSIP</code></strong> <strong>when it is available</strong>. If the databases of interest have <strong>historic</strong> <strong><code>CUSIP</code></strong>, match it with CRSP&#x27;s <code>NCUSIP</code>. When the <code>CUSIP</code> lengths are not the same, truncate the longer one to make them compatible.</p><p data-block-key="uti8x">For example, Compustat uses 9-digit <code>CUSIPs</code> while CRSP uses 8-digit <code>CUSIPs</code>. The 9th digit in Compustat is a check digit that is not meaningful and may be removed. 6-digit <code>CUSIPs</code> may also be used. As the first 6 digits of CUSIP represent the issuer, it is possible to have multiple links. In this case, use tickers or company names as an additional check. Use the following SAS statement to create a 6-digit <code>CUSIP</code>:</p><p data-block-key="0wejr"><code>CUSIP6 = substr(cusip, 1, 6);</code>.</p><p data-block-key="5i34t"><strong>If</strong> <strong><code>CUSIP</code></strong><strong> is not available</strong> in the other database, but ticker symbols are provided, it is possible to establish the link through the ticker. Take note that discarded tickers are often reused for newly listed companies, so it is crucial to use ticker effective dates when linking by this method.</p><p data-block-key="0lfej"><strong>If both</strong> <strong><code>CUSIPs</code></strong> <strong>and tickers are not available</strong>, another option is to link by company names. Total assets, company addresses, and more can provide supporting evidence. Be aware that a company can have its name spelled in a variety of different ways. For example, IBM can be found as as &quot;INTERNATIONAL BUSINESS MACHINE&quot; or &quot;INTERNATIONAL BUSINESS MACHS CO&quot;. In SAS, make use of the spelling distance function (<code>SPEDIS</code>) to quantify the difference between two company names.</p>
+
+
+
+	
+		<p align="right"><a class="btn btn-primary btn-sm" href="#linking">Top of Section</a></p>
+	
+</section>
+
+
+					
+						
+						
+						
+
+<section class="m-top10 m-bottom30">
+	<header>
+		<a name="database-notes"></a>
+		<h2>Database Notes</h2>
+
+	</header>
+	
+
+
+  
+
+	
+		<ul class="cta-links ">
+	
+
+	
+	
+		<li class="">
+	
+		
+			<a class="default-fa"
+			   href="https://wrds-www.wharton.upenn.edu/pages/grid-items/crsp-stock-database-structure/"
+					
+					>CRSP Stock Database Structure Video</a>
+		
+	
+		</li>
+	
+
+
+	
+
+	
+
+	
+	
+		<li class="">
+	
+		
+			<a class="default-fa"
+			   href="https://wrds-www.wharton.upenn.edu/pages/grid-items/crsp-useful-variables/"
+					
+					>CRSP - Useful Variables Videos</a>
+		
+	
+		</li>
+	
+
+
+	
+		</ul>
+	
+
+
+
+  <p data-block-key="swke4">For additional help regarding the CRSP U.S. Stock product, <a href="https://wrds-www.wharton.upenn.edu/pages/support/">refer to the WRDS support page</a>.</p>
+
+  <h3 id="comparing-crsp-stock-and-index-products">Comparing CRSP Stock and Index Products</h3>
+
+
+  <p data-block-key="ap14f">The CRSP U.S. Stock product includes <strong>minimal</strong> information about stock indexes and the market as a whole. <strong>Beta</strong> and <strong>index membership (index constituents)</strong> are sometimes thought of as stock characteristics, but actually only exist within the context of the market. These items are included in the CRSP Index product.</p>
+
+  <h3 id="adjusting-for-stock-splits-and-other-corporate-actions">Adjusting for Stock Splits and Other Corporate Actions</h3>
+
+
+  <p data-block-key="bwwud"><strong>Returns are already adjusted for splits</strong>, but prices and shares outstanding are not. To adjust prices and shares outstanding, use the following code in SAS:</p>
+
+  
+<link href="//cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-coy.min.css" rel="stylesheet"><link href="//cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet"><link href="//cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css" rel="stylesheet"><script>
+            /* This is ugly, but to ensure we only create this function once, and only call
+            each JS library once, we need to check here in case there are multiple Wagtail
+            blocks on this page. This will ensure we only load the minimum payload. */
+            if(typeof loadPrismLanguage != 'function') {
+                window.loadPrismLanguage = function(language) {
+                    var libraries = [
+                        {
+                            "id": "code-block-prismjs",
+                            "url": "//cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+                        }
+                        /*Since there is no html.min.js this check makes sure we
+                        bypass the loading of the script when syntax is set to HTML */
+                        
+                            ,
+                            {
+                                "id": "code-block-prismjs-" + language,
+                                "url": "//cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-" + language + ".min.js"
+                            }
+                        
+                        ,
+        {
+            "id": "code-block-line-numbers",
+            "url": "//cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"
+        }
+        
+                        ,
+        {
+            "id": "code-block-toolbar",
+            "url": "//cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.js"
+        }
+        
+                        ,
+        {
+            "id": "code-block-copy-to-clipboard",
+            "url": "//cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"
+        }
+        
+                    ];
+
+                    for(const library of libraries) {
+                        if(document.getElementById(library["id"]) == null) {
+                            var s = document.createElement("script");
+                            s.id = library["id"];
+                            s.type = "text/javascript";
+                            s.src = library["url"];
+                            s.async = false;
+                            document.body.appendChild(s);
+                        }
+                    }
+                };
+            }
+
+            loadPrismLanguage('sas');
+
+            language_class_name = 'language-sas';
+            </script><pre class="line-numbers"><code id="target-element-current">Adjusted prices = PRC / CFACPR
+Adjusted shares = SHROUT * CFACSHR</code></pre><script>
+                var block_num = (typeof block_num === 'undefined') ? 0 : block_num;
+                block_num++;
+                document.getElementById('target-element-current').className = language_class_name;
+                document.getElementById('target-element-current').id = 'target-element-' + block_num;
+            </script>
+
+
+  <p data-block-key="amnlq"><code>CFACSHR</code> is not always equal to CFACPR. This can be caused by less common distribution events, spin-offs, and rights.</p>
+
+  <h3 id="negative-stock-price-prc">Negative Stock Price (PRC)</h3>
+
+
+  <p data-block-key="p7am1">If the closing price<strong> is not available</strong> for any given period, the number in the price field is replaced with a bid/ask average. Bid/ask averages have dashes placed in front of them. These do not incorrectly reflect negative prices; they serve to distinguish bid/ask averages from actual closing prices. If neither the price nor bid/ask average is available, the field is set to zero.</p>
+
+  <h3 id="missing-value-codes-in-sas">Missing Value Codes in SAS</h3>
+
+
+  <p data-block-key="ridk1">When looking up a holding period return (RET), or delisting return (DLRET), SAS may return a missing value code. These are indicated with a decimal point followed by a letter (e.g. &quot;.E&quot;, &quot;.D&quot;). The descriptions for the missing value codes in SAS can be found in <a href="https://wrds-www.wharton.upenn.edu/pages/support/support-articles/crsp/stock/crsp-monthly-stock-data-i-sometimes-see-holding-period-return-value-p-or-t-what-do-they-mean/">this KnowledgeBase article</a>.</p>
+
+  <h3 id="share-code-security-type-shrcd">Share Code Security Type (SHRCD)</h3>
+
+
+  <p data-block-key="cypdx">Security type code (SHRCD) has two digits, with each digit representing a specific piece of information. The first defines the security type; the second provides more detailed information about the type of security traded. For example, a SHRCD of 10 or 11 would represent U.S. common stocks.</p><p data-block-key="kpmjt">Table 3: SHRCD First Digit</p>
+
+  <table class="table table-striped table-hover table-bordered table-mobile tablesorter tablesorter-default">
+    
+        <thead>
+        <tr>
+            
+                <th>
+                    
+                        
+                            First Digit
+                        
+                    
+                </th>
+            
+                <th>
+                    
+                        
+                            Definition
+                        
+                    
+                </th>
+            
+        </tr>
+        </thead>
+    
+    <tbody>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                1
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                Ordinary Common Shares
+                            
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                2
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                Certificates
+                            
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                3
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ADRs (American Depository Receipts)
+                            
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                4
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                SBIs (Shares of Beneficial Interest)
+                            
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                7
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                Units (Depository Units, Units of Beneficial Interest, Units of Limited Partnership Interest, Depository Receipts, etc.)
+                            
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+    </tbody>
+</table>
+
+
+  <p data-block-key="ahwy8">Note: Code 7 (Units) do not represent combinations of common stock and anything else (e.g. warrants).</p><p data-block-key="4gne0"></p><p data-block-key="axwsm">Table 3: SHRCD Second Digit</p>
+
+  <table class="table table-striped table-hover table-bordered table-mobile tablesorter tablesorter-default">
+    
+        <thead>
+        <tr>
+            
+                <th>
+                    
+                        
+                            Second Digit
+                        
+                    
+                </th>
+            
+                <th>
+                    
+                        
+                            Definition
+                        
+                    
+                </th>
+            
+        </tr>
+        </thead>
+    
+    <tbody>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                0
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                Securities which have not been further defined.
+                            
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                1
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                Securities which need not be further defined.
+                            
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                2
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                Companies incorporated outside the US
+                            
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                3
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                Americus Trust Components (Primes and Scores).
+                            
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                4
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                Closed-end funds.
+                            
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                5
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                Closed-end fund companies incorporated outside the US
+                            
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                8
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                REIT&#x27;s (Real Estate Investment Trusts)
+                            
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+    </tbody>
+</table>
+
+
+  <h3 id="dataset-differences-in-web-queries-unixsas-access">Dataset Differences in Web Queries &amp; UNIX/SAS Access</h3>
+
+
+  <p data-block-key="6hpn7">When accessing the Monthly Stock file (msf) or Daily Stock file (dsf) on the WRDS server through UNIX or SAS, a user will notice <strong>some information is unavailable</strong>, such as the share code (SHRCD) or delisting price (DLPRC). This information is available when using the web query form, however. This is because <strong>WRDS web queries merge</strong> the Monthly and Daily Stock file (msf/dsf) with the Event file (MSEALL/DSEALL) and Market Indexes Monthly (msi) on the fly. Share Code and Share Class are part of the Events table that only records changes, rather than creating an entry for every day or month. Please refer to the CRSP datalist to find out what is provided in each SAS dataset. Additionally, use the variable search tool to find out which dataset contains the item on WRDS.</p><p data-block-key="brthc">Users accessing SAS datasets through UNIX to perform complex calculations can refer to the &quot;crspmerge&quot; SAS macro for merging CRSP Stock and Events data.</p>
+
+  <h3 id="event-tables">Event Tables</h3>
+
+
+  <p data-block-key="bj8ym">The stock price tables (<code>dsf</code>, <code>msf</code>) are time series, they have one row per month for each company. The event tables have one row per event - they only <strong>note changes</strong>.</p><p data-block-key="mk1te">There are 5 types of events:</p><ul><li data-block-key="63576">Names History (NAMES).</li><li data-block-key="jchdd">Delisting Event Histories (DELIST).</li><li data-block-key="5ce1s">Distribution Events (DIST).</li><li data-block-key="ndqkm">NASDAQ Event Information Histories (NASDIN).</li><li data-block-key="dd9hr">Shares Event Histories (SHARES).</li></ul><p data-block-key="572ig">There are tables for end-of-day and end-of-month frequencies for each event type (e.g. <code>dsenames</code>, <code>msenames</code>) as well as tables of all events together (<code>dse</code>, <code>mse</code>). Additional tables <code>dseall</code>, <code>mseall</code>, and <code>stocknames</code> were created by WRDS and are described below.</p><p data-block-key="0ws7b">The <code>DATE</code> variable in the Monthly Stock Events (<code>mse</code>) file for each event type corresponds to different items across the various files. In the <code>msenames</code> file it refers to the Name Date (NAMEDT), in the <code>msedist</code> file it is the ex-distribution date (EXDT), for <code>msedelist</code> it is the delisting date (DLSTDT), <code>mseshares</code> uses it for the shares observation date (SHRSDT) in , and in <code>msenasdin</code> it is the NASDAQ Traits Date (TRTSDT).</p><p data-block-key="7z3hu">The following table shows a slice taken from the <code>mse</code> file for Microsoft.</p><p data-block-key="izh5d"></p><p data-block-key="rxla3">Table 4: mse</p>
+
+  <table class="table table-striped table-hover table-bordered table-mobile tablesorter tablesorter-default">
+    
+    <tbody>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                Date
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                EVENT
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                COMNAM
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                PERMNO
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                PERMCO
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                TSYMBOL
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                CUSIP
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                NCUSIP
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                NAICS
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                HSICCD
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                SICCD
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                SHRCD
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                NAMEENDT
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                DCLRDT
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                DIVAMT
+                            
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                19860313
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                NAMES
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                MICROSOFT CORP
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                10107
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                8048
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                MSFT
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                59491810
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                59491810
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                7370
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                7370
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                11
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                20040609
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                20040528
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                NASDIN
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                10107
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                8048
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                59491810
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                7370
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                20040604
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                NASDIN
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                10107
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                8048
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                59491810
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                7370
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                20040610
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                NAMES
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                MICROSOFT CORP
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                10107
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                8048
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                MSFT
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                59491810
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                59491810
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                511210
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                7370
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                7370
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                11
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                20140829
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                20040610
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                SHARES
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                10107
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                8048
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                59491810
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                7370
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                20041115
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                DIST
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                10107
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                8048
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                59491810
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                7370
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                20040915
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                0.08
+                            
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                20041115
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                DIST
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                10107
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                8048
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                59491810
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                7370
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                20041109
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                3.00
+                            
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+    </tbody>
+</table>
+
+
+  <p data-block-key="3musg">When <code>NAMES</code> occurs in the &quot;Event Type&quot; field, there is a change to one or more identifying fields: company name, <code>NCUSIP</code>, <code>Tsymbol</code>, <code>NAICS</code>and so on. Two SIC variables are present. <code>HSICCD</code> is the non-historical header version that is the same for the company&#x27;s entire history. <code>SICCD</code>is the historic version that changes over time.</p><p data-block-key="tqwps">In the example above for Microsoft, there are two <code>NAMES</code> events between 1986 and 2004. The row added on June 10, 2004 indicates the <code>NAMES</code> event where a NAICS code was added.</p><p data-block-key="u9bwr">The <code>EVENT</code> type is not available in <strong><code>mseall</code></strong>. This dataset is generated by WRDS and <strong>displays a summary of a company as of each date</strong>.</p><p data-block-key="r0ii5"></p><p data-block-key="w7nir">Table 5: mseall</p>
+
+  <table class="table table-striped table-hover table-bordered table-mobile tablesorter tablesorter-default">
+    
+        <thead>
+        <tr>
+            
+                <th>
+                    
+                        
+                            Date
+                        
+                    
+                </th>
+            
+                <th>
+                    
+                        
+                            COMNAM
+                        
+                    
+                </th>
+            
+                <th>
+                    
+                        
+                            PERMNO
+                        
+                    
+                </th>
+            
+                <th>
+                    
+                        
+                            PERMCO
+                        
+                    
+                </th>
+            
+                <th>
+                    
+                        
+                            TSYMBOL
+                        
+                    
+                </th>
+            
+                <th>
+                    
+                        
+                            CUSIP
+                        
+                    
+                </th>
+            
+                <th>
+                    
+                        
+                            NCUSIP
+                        
+                    
+                </th>
+            
+                <th>
+                    
+                        
+                            NAICS
+                        
+                    
+                </th>
+            
+                <th>
+                    
+                        
+                            HSICCD
+                        
+                    
+                </th>
+            
+                <th>
+                    
+                        
+                            SICCD
+                        
+                    
+                </th>
+            
+                <th>
+                    
+                        
+                            SHRCD
+                        
+                    
+                </th>
+            
+                <th>
+                    
+                        
+                            NAMEENDT
+                        
+                    
+                </th>
+            
+                <th>
+                    
+                        
+                            DCLRDT
+                        
+                    
+                </th>
+            
+                <th>
+                    
+                        
+                            DIVAMT
+                        
+                    
+                </th>
+            
+        </tr>
+        </thead>
+    
+    <tbody>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                19860331
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                MICROSOFT CORP
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                10107
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                8048
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                MSFT
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                59491810
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                59491810
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                7370
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                7370
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                11
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                20040906
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                20040528
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                MICROSOFT CORP
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                10107
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                8048
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                MSFT
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                59491810
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                59491810
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                7370
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                7370
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                11
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                20040630
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                MICROSOFT CORP
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                10107
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                8048
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                MSFT
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                59491810
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                59491810
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                511210
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                7370
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                7370
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                11
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                20140829
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                ...
+                            
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                20041130
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                MICROSOFT CORP
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                10107
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                8048
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                MSFT
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                59491810
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                59491810
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                511210
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                7370
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                7370
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                11
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                20040915
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                0.08
+                            
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                20041130
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                MICROSOFT CORP
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                10107
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                8048
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                MSFT
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                59491810
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                59491810
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                511210
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                7370
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                7370
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                11
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                20041109
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                3.00
+                            
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+    </tbody>
+</table>
+
+
+  <p data-block-key="vo0hv">In the <code>mseall</code> file, items associated with a one-time event, such as dividend cash amount (divamt), will not be carried onto the next observation. If there are multiple one-time events within one month (e.g. see the month of November 2004 for Mircosoft), multiple observations will appear for the same date (msi.date).</p><p data-block-key="ywg4b">The <strong><code>stocknames</code></strong> file is a cross between <code>dseall</code> and <code>dsenames</code>. It has only <strong>the most important</strong> identification variables, eliminating much of the noise of <code>dseall</code>. It adds an effective date range for the identifiers (NAMEDT, NAMEENDDT) for each set of <code>NCUSIP</code>, <code>COMNAM</code>, <code>TICKER</code>, and <code>EXCHCD</code> variables and a date range for price data (ST_DATE, END_DATE). <code>CUSIP</code> and <code>HEXCD</code> are header variables and <code>SICCD</code>, <code>SHRCD</code>, and <code>SHRCLS</code> reflect the status of name start date (namedt). <code>stocknames</code> is the most popular event file.</p><p data-block-key="b4h1d">The example below shows slices taken from <code>stocknames</code> file for Microsoft and Dell. In 2003, Dell changed its <code>CUSIP</code> from 24702510 to 24702R10; the two rows in <code>stocknames</code> reflect this change.</p>
+
+  <table class="table table-striped table-hover table-bordered table-mobile tablesorter tablesorter-default">
+    
+        <thead>
+        <tr>
+            
+                <th>
+                    
+                        
+                            COMNAM
+                        
+                    
+                </th>
+            
+                <th>
+                    
+                        
+                            PERMNO
+                        
+                    
+                </th>
+            
+                <th>
+                    
+                        
+                            PERMCO
+                        
+                    
+                </th>
+            
+                <th>
+                    
+                        
+                            NCUSIP
+                        
+                    
+                </th>
+            
+                <th>
+                    
+                        
+                            NAMEDT
+                        
+                    
+                </th>
+            
+                <th>
+                    
+                        
+                            NAMEENDT
+                        
+                    
+                </th>
+            
+                <th>
+                    
+                        
+                            ST_DATE
+                        
+                    
+                </th>
+            
+                <th>
+                    
+                        
+                            END_DATE
+                        
+                    
+                </th>
+            
+        </tr>
+        </thead>
+    
+    <tbody>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                MICROSOFT CORP
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                10107
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                8048
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                59491810
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                19860313
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                20140829
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                19860331
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                20140829
+                            
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                DELL COMPUTER CORP
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                11081
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                9833
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                24702510
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                19880622
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                20030721
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                19880630
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                20131031
+                            
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+        <tr>
+            
+                
+                    <td>
+                        
+                            
+                                DELL COMPUTER CORP
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                11081
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                9833
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                24702R10
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                20030722
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                20131029
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                19880630
+                            
+                        
+                    </td>
+                 
+            
+                
+                    <td>
+                        
+                            
+                                20131031
+                            
+                        
+                    </td>
+                 
+            
+        </tr>
+    
+    </tbody>
+</table>
+
+
+  <p data-block-key="lsu6a">In CRSP the variable <code>BEGDAT</code> from table <code>dsfhdr</code> is often used as a rough estimate of the first date of trading after the initial public offering (IPO). The document <a href="https://wrds-www.wharton.upenn.edu/pages/wrds-research/applications/programming-examples-and-other-topics/wrds-guide-ipo-databases-and-research/">&quot;WRDS Guide to IPO Databases and Research&quot;</a> discusses this topic in further detail.</p>
+
+  <h3 id="sic-codes">SIC Codes</h3>
+
+
+  <p data-block-key="n5cvd">The Standard Industrial Classification code (SIC) is used to group companies with similar products or services. The SIC code is an integer between 1000 and 9999. The first 2 digits refer to a major industry group, the third digit identifies an industry group and the fourth digit indicates the industry.</p><p data-block-key="ag8r4">In CRSP, the SIC code variable (SICCD) contains the historical SIC information. The <code>HSICCD</code> variable contains the header or most recent SIC codes. <code>HSICCD</code> is available in the stock files, however, you will have to look in the event files for <code>SICCD</code>.</p><p data-block-key="mbjkd">People often report that there are <strong>differences between</strong> the SIC codes in <strong>CRSP, Compustat</strong>, and other databases. This is due to CRSP and Compustat obtaining SIC codes from different sources. Compustat assigns SIC codes by analyzing a company&#x27;s 10K and annual report.</p><p data-block-key="w4fv6">In the December 2009 stock database, CRSP removed SIC codes provided by Mergent from the Stock Databases and replaced them with SIC codes from Interactive Data Corporation (IDC). Mergent was the primary source of SIC codes for NYSE, NYSE MKT, and ARCA securities between August 24, 2001 (200108240) and 2009. IDC has always been a continuous alternate source of SIC Codes.</p><p data-block-key="3tku6">SIC codes can be useful for rough groupings of industries. Beyond that, they should be <strong>used with caution</strong>, as they are not assigned or reviewed with a strict procedure by any government agency. Moreover, most large companies belong to multiple SIC codes and can change over time. After the initial SIC code assignment when a company goes public, government agencies do not refer to the code or the company again - and quite often a company will report its initial SIC code forever. There have been cases in which companies have obsolete SIC codes from the 1972 numbering scheme in SEC filings from the early 1990s</p>
+
+  <h3 id="calculations">Calculations</h3>
+
+
+  <h3 id="market-cap">Market Cap</h3>
+
+
+  <p data-block-key="t3c4b">In CRSP the market capitalization as the product of price and shares outstanding is computed as follows:</p>
+
+  
+<link href="//cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-coy.min.css" rel="stylesheet"><link href="//cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet"><link href="//cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.css" rel="stylesheet"><script>
+            /* This is ugly, but to ensure we only create this function once, and only call
+            each JS library once, we need to check here in case there are multiple Wagtail
+            blocks on this page. This will ensure we only load the minimum payload. */
+            if(typeof loadPrismLanguage != 'function') {
+                window.loadPrismLanguage = function(language) {
+                    var libraries = [
+                        {
+                            "id": "code-block-prismjs",
+                            "url": "//cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+                        }
+                        /*Since there is no html.min.js this check makes sure we
+                        bypass the loading of the script when syntax is set to HTML */
+                        
+                            ,
+                            {
+                                "id": "code-block-prismjs-" + language,
+                                "url": "//cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-" + language + ".min.js"
+                            }
+                        
+                        ,
+        {
+            "id": "code-block-line-numbers",
+            "url": "//cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"
+        }
+        
+                        ,
+        {
+            "id": "code-block-toolbar",
+            "url": "//cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/toolbar/prism-toolbar.min.js"
+        }
+        
+                        ,
+        {
+            "id": "code-block-copy-to-clipboard",
+            "url": "//cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"
+        }
+        
+                    ];
+
+                    for(const library of libraries) {
+                        if(document.getElementById(library["id"]) == null) {
+                            var s = document.createElement("script");
+                            s.id = library["id"];
+                            s.type = "text/javascript";
+                            s.src = library["url"];
+                            s.async = false;
+                            document.body.appendChild(s);
+                        }
+                    }
+                };
+            }
+
+            loadPrismLanguage('sas');
+
+            language_class_name = 'language-sas';
+            </script><pre class="line-numbers"><code id="target-element-current">mktcap = abs(prc)*shrout</code></pre><script>
+                var block_num = (typeof block_num === 'undefined') ? 0 : block_num;
+                block_num++;
+                document.getElementById('target-element-current').className = language_class_name;
+                document.getElementById('target-element-current').id = 'target-element-' + block_num;
+            </script>
+
+
+  <h3 id="market-to-book-ratios">Market to Book Ratios</h3>
+
+
+  <p data-block-key="kq9d9">Please refer to the <a href="https://wrds-www.wharton.upenn.edu/pages/wrds-research/applications/risk-and-valuation-measures/market-book-mb-ratio/">Market-to-Book (M/B) Ratio</a> or <a href="https://wrds-www.wharton.upenn.edu/pages/wrds-research/applications/portfolio-construction-and-market-anomalies/characteristic-based-benchmarks-daniel-grinblatt-titman-and-wermers-1997/">Daniel, Grinblatt, Titman, and Wermers (1997) Characteristic-Based Benchmarks</a> applications on WRDS.</p>
+
+  
+
+	
+		<ul class="cta-links ">
+	
+
+	
+	
+		<li class="">
+	
+		
+			<a class="default-fa"
+			   href="https://wrds-www.wharton.upenn.edu/pages/grid-items/fama-french-smb-and-hml-crsp-stock-data/"
+					
+					>Fama-French SMB and HML | 2. CRSP Stock Data</a>
+		
+	
+		</li>
+	
+
+
+	
+		</ul>
+	
+
+
+
+
+
+	
+		<p align="right"><a class="btn btn-primary btn-sm" href="#database-notes">Top of Section</a></p>
+	
+</section>
+
+
+					
+				
+
+			
+
+			
+				<!-- No extra_body_bottom content -->
+			
+
+			
+				<p align="right"><a class="btn btn-primary btn-sm" href="#top">Top</a></p>
+			
+		</section>
+	</div>
+
+	
+		<div class="col-12 col-lg-4 fixed-sidebar sticky-top bg-white" data-sidebar-fit-content="true">
+
+			
+				<!-- No extra_sidebar_top content -->
+			
+
+			
+
+				
+					
+						<a class="btn btn-primary btn-block mb-3" data-toggle="collapse" href="#toc-content" role="button" aria-expanded="true" aria-controls="toc-content">
+							Table of Contents
+							<span class="collapse_area_show small">(show)</span>
+							<span class="collapse_area_hide small">(hide)</span>
+						</a>
+						<div id="toc-content" class="collapse show">
+							
+  <ul class="cta-links">
+    
+      <li><a class="default-fa" href="#introduction">Introduction</a></li>
+    
+      <li><a class="default-fa" href="#coverage">Coverage</a></li>
+    
+      <li><a class="default-fa" href="#data-collection-process">Data Collection Process</a></li>
+    
+      <li><a class="default-fa" href="#dataset-organization">Dataset Organization</a></li>
+    
+      <li><a class="default-fa" href="#linking">Linking</a></li>
+    
+      <li><a class="default-fa" href="#database-notes">Database Notes</a></li>
+    
+  </ul>
+
+
+						</div>
+					
+				
+
+				
+					
+				
+
+			
+
+			
+				<!-- No extra_sidebar_bottom content -->
+			
+
+		</div>
+	
+</div>
+
+
+
+		</div><!-- ends the main-section -->
+	</div><!-- ends the main container -->
+</main><!--/ end main content -->
+
+
+
+    <div class="mt-5">
+        
+
+
+
+
+
+
+<footer class="wrds-footer d-print-none">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-lg-4 mb-3">
+				<a href="http://www.wharton.upenn.edu" title="The Wharton School" target="_blank">
+					<img src="/static/img/logo/wharton_white.svg" alt="The Wharton School Logo" class="wrds-footer-logo ">
+				</a>
+				<a class="wrds-footer-text" href="/">Wharton Research Data Services</a>
+               <div class="border-white mt-3 border-top d-md-block d-lg-none"></div>
+			</div>
+			<div class="col-12 col-lg-8">
+				<div class="row">
+					
+
+
+
+
+
+
+
+<div class="col-md-3 col-sm-6 col-12">
+	
+		<ul class="no-bullet-list">
+			
+				
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/about/"
+					
+					
+			   title="For 25+ years, Wharton Research Data Services (WRDS) has supported global institutions across 38 countries with targeted solutions that underpin research, reinforce learning, and enable discovery."
+					>About WRDS</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/about/wrds-faqs/"
+					
+					
+			   title="Answers to some frequently asked questions"
+					>WRDS FAQs</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/news/"
+					
+					>WRDS News</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/about/wrds-staff/"
+					
+					
+			   title="Staff at Wharton Research Data Services"
+					>Our Team</a>
+		
+	
+		</li>
+	
+
+				
+			
+		</ul>
+	
+</div>
+					
+
+
+
+
+
+
+
+<div class="col-md-3 col-sm-6 col-12">
+	
+		<ul class="no-bullet-list">
+			
+				
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/about/3-ways-use-wrds/"
+					
+					
+			   title="Flexible delivery options."
+					>Ways to Use WRDS</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/about/log-in-to-wrds-using-two-factor-authentication/"
+					
+					
+			   title="Learn how to register your smartphone and use Duo Mobile two-factor authentication"
+					>Using Two-Factor Auth</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/about/wrds-account-types/"
+					
+					
+			   title="This explanation covers each type of WRDS account available to users. Note that usernames are permanent and cannot be modified once you have requested your account. Please check with your institution&#x27;s representative if there are any username requirements before creating your account."
+					>WRDS Account Types</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/users/tou/"
+					
+					>Terms of Use</a>
+		
+	
+		</li>
+	
+
+				
+			
+		</ul>
+	
+</div>
+					
+
+
+
+
+
+
+
+<div class="col-md-3 col-sm-6 col-12">
+	
+		<ul class="no-bullet-list">
+			
+				
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/users/preferences/"
+					
+					>Account Preferences</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/contact-support"
+					
+					>Info / Support Request</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/about/wrds-508-compliance/wrds-privacy-and-gdpr-policy/"
+					
+					
+			   title="Your privacy and the protection of your data are important to us.  This page documents the data we collect from you and what you can do to remove your data if you choose to do so."
+					>Privacy Policy</a>
+		
+	
+		</li>
+	
+
+				
+			
+		</ul>
+	
+</div>
+					
+
+
+
+
+
+
+
+<div class="col-md-3 col-sm-6 col-12">
+	
+		<ul class="no-bullet-list">
+			
+				
+					
+						
+	
+		<li class="sub-title">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/about/demo-wrds/"
+					
+					>Sample Data</a>
+		
+	
+		</li>
+	
+
+					
+				
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/events/"
+					
+					>Conference Calendar</a>
+		
+	
+		</li>
+	
+
+				
+					
+	
+		<li class="">
+	
+		
+			<a class=""
+			   href="https://wrds-www.wharton.upenn.edu/pages/about/enabling-impactful-research/"
+					
+					
+			   title="Enhance research, attract and retain leading thought leaders, improve engagement, and create societal impact."
+					>Impactful Research</a>
+		
+	
+		</li>
+	
+
+				
+			
+		</ul>
+	
+</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<small class="wrds-footer-copyright">Unless otherwise noted, all material is &copy; 1993-2025, The Wharton School, University of Pennsylvania. All rights reserved.</small>
+			</div>
+		</div>
+	</div>
+</footer>
+    </div>
+
+
+
+	<script src="/static/js/top-nav.js"></script>
+	<script src="/static/js/jquery.cookie.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/6.0.0/bootbox.min.js" integrity="sha512-oVbWSv2O4y1UzvExJMHaHcaib4wsBMS5tEP3/YkMP6GmkwRJAa79Jwsv+Y/w7w2Vb/98/Xhvck10LyJweB8Jsw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+	<script src="/static/wagtailkatex/katex/katex.min.js"></script>
+	<script src="/static/katex_frontend_renderer.js"></script>
+
+<!-- Django - host: wrds-pub1-w.wharton.private, port: 443, time: 2025-03-31EDT 10:46:09 -0400, remote_addr: 12.156.224.195, duo_redirect_uri: https://wrds-www.wharton.upenn.edu/users/duo-callback?next=%2Fpages%2Fsupport%2Fmanuals-and-overviews%2Fcrsp%2Fstocks-and-indices%2Foverview-crsp-us-stock-database%2F -->
+</body>
+<script>
+    
+
+    function offsetBottom(el, i) {
+        i = i || 0;
+        return $(el)[i].getBoundingClientRect().bottom
+    }
+
+    document.addEventListener("DOMContentLoaded", function (event) {
+        var vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+        var footerBottom = offsetBottom('.wrds-footer');
+        var element = document.getElementById('main-body');
+        var footerDiff = vh - footerBottom;
+        if (footerDiff > 0) {
+            
+            footerDiff = footerDiff + 50;
+            element.style.marginBottom = footerDiff + "px";
+        }
+    }, false);
+
+    if (document.referrer) {
+        // Retrieving referrer slug from URL
+        var referrer_url = new URL(document.referrer);
+        var slug = referrer_url.pathname.split('/');
+
+        // If document referrer slug is search
+        if(slug[1] === "search") {
+            // Set the datetime page was loaded
+            const startTime = performance.now();
+
+            // Create a URL object
+            const url = new URL(window.location.href);
+            const searchParams = url.searchParams;
+
+            // Assign Algolia URL parameters to constants
+
+            const queryID = searchParams.get("algolia-query-id");
+            const objectID = searchParams.get("algolia-object-id");
+            const indexName = searchParams.get("algolia-index-name");
+
+            let data = dataPrep(queryID, objectID, indexName)
+
+            // Check to see if all form data exists
+            let dataValues = [...data.entries()]
+            let indexOfDataValues = dataValues.findIndex(function(sub) {
+                return sub.indexOf("") !== -1;
+            });
+
+            // if all form data exists
+            if (indexOfDataValues === -1) {
+                // if Query form page then add event listener to submit form
+                // else add event listener for time on page
+                if ("contentpage" == "queryformpage") {
+                    handleQueryFormSubmissionBeacon(data)
+                } else {
+                    handleTimeOnPageBeacon(startTime, data)
+                }
+
+                // Remove URL params so it is no longer displayed in the browser
+                removeURLParams(url);
+            }
+        }
+    }
+
+    function dataPrep(queryID, objectID, indexName) {
+        var data = new FormData();
+        data.append("query_id", queryID)
+        data.append("object_id", objectID)
+        data.append("index_name", indexName)
+        data.append("csrfmiddlewaretoken", "GvQco3ldfvToUo6KGoOZbwLEg1mgMoz9aeUipVYIdvEJLTU8KLTn90qRISLvQ3hf");
+        return data;
+    }
+
+    // Remove URL parameters
+    function removeURLParams(url) {
+        const paramsToRemove = ['algolia-query-id', 'algolia-object-id', 'algolia-index-name'];
+        const urlObj = new URL(url);
+        const params = new URLSearchParams(urlObj.search);
+        paramsToRemove.forEach(function(param) {
+            params.delete(param);
+        });
+        urlObj.search = params.toString();
+        const newUrl = urlObj.toString();
+        history.replaceState(null, '', newUrl);
+    }
+
+    // Send beacon on query submission
+    function handleQueryFormSubmissionBeacon(data) {
+        // emit non-blocking beacon with URL params as the page
+        // event listener on click, "submit form"
+        const element = document.getElementById("wrds-query-form-submit-button");
+        element.addEventListener("click", () => {
+            data.append("event", "Query Form Submitted")
+            navigator.sendBeacon("/search/algolia-conversion-beacon/", data);
+        });
+    }
+
+    // Send beacon on page visibility change to hidden
+    function handleTimeOnPageBeacon(startTime, data) {
+        // emit non-blocking beacon with URL params as the page
+        // transitions to background state (Page Visibility API)
+        document.addEventListener("visibilitychange", () => {
+            if (document.visibilityState === "hidden") {
+                var endTime = performance.now();
+                // Calculate time spent on page
+                var timeSpent = (((endTime-startTime) % 60000) / 1000).toFixed(0);
+
+                data.append("event", "Time On Page")
+                data.append("time_spent_on_page", timeSpent)
+                data.append("read_time_in_seconds", "946")
+                navigator.sendBeacon("/search/algolia-conversion-beacon/", data);
+            }
+        });
+    }
+</script>
+</html>
