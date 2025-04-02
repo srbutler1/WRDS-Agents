@@ -16,23 +16,64 @@ This package provides a Python multi-agent system for retrieving data from the W
 - **Automatic CSV Storage**: All query results are automatically saved to CSV files in the `data` directory
 - **Robust Error Handling**: Gracefully handles API connection errors and provides fallbacks
 - **Interactive Mode**: Provides an interactive console for exploring WRDS data
+- Natural language interface for querying the WRDS database
+- Multi-agent architecture for coordinated data retrieval
+- Automatic SQL query generation based on natural language
+- Schema information extracted from WRDS documentation
+- Automatic saving of query results to CSV files in the data folder
+- Comprehensive error handling and logging
+
+## Project Structure
+
+```
+wrds_agent/
+├── agents/                 # Agent implementations
+│   ├── __init__.py
+│   ├── administrator_agent.py
+│   ├── base_agent.py
+│   ├── documentation_agent.py
+│   ├── sql_agent.py
+│   └── validator_agent.py
+├── data/                   # Directory for saved CSV query results
+├── utils/                  # Utility functions
+│   ├── __init__.py
+│   ├── openai_utils.py
+│   └── schema_extractor.py
+├── wrds_schema.json        # Extracted schema information
+├── autonomous_wrds_system.py  # Main system implementation
+├── query_wrds.py          # Command-line interface
+├── test_setup.py          # Setup verification script
+└── requirements.txt       # Python dependencies
+```
 
 ## Installation
 
-1. Clone this repository or copy the files to your desired location
+1. Clone this repository
 2. Install the required dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Copy the `.env.template` file to `.env` and add your WRDS credentials and OpenAI API key:
+3. Create a `.env` file in the root directory with your WRDS and OpenAI credentials (see `.env.template` for an example):
 
-```bash
-cp .env.template .env
+```
+WRDS_USERNAME=your_username
+WRDS_PASSWORD=your_password
+OPENAI_API_KEY=your_openai_api_key
 ```
 
-Edit the `.env` file with your WRDS username, password, and OpenAI API key.
+4. Run the setup verification script to ensure everything is configured correctly:
+
+```bash
+python test_setup.py
+```
+
+## Schema Information
+
+The system uses a schema information file (`wrds_schema.json`) that contains details about the WRDS database tables and their fields. This file is automatically loaded by the DocumentationAgent when the system starts.
+
+If you have WRDS documentation files, you can place them in a directory named `WRDS Documentation` in the parent directory of this repository, and the system will attempt to extract schema information from them. If no documentation files are found, the system will use the existing schema information in the `wrds_schema.json` file.
 
 ## Usage
 

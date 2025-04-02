@@ -4,6 +4,7 @@ import logging
 import pandas as pd
 from typing import Dict, List, Any, Optional, Tuple, Union
 import wrds
+import json
 
 from .base_agent import BaseAgent, Message
 from ..utils.openai_utils import get_completion
@@ -202,63 +203,56 @@ class SQLAgent(BaseAgent):
             return False
     
     def generate_sql(self, query: str, tables_info: Dict[str, Dict[str, Any]] = None) -> Tuple[pd.DataFrame, str, str]:
-        """Generate a SQL query based on a natural language query.
-        
+        """Generate a SQL query based on a natural language query and table information.
+
         Args:
-            query: Natural language query
-            tables_info: Information about relevant tables
-            
+            query: The natural language query
+            tables_info: Dictionary of table information
+
         Returns:
-            Tuple of (results DataFrame, SQL query string, explanation string)
+            Tuple of (results, sql_query, explanation)
         """
-        try:
-            if not tables_info:
-                self.logger.warning("No table information provided for SQL generation")
-                return pd.DataFrame(), "", "No table information available"
-            
-            # Prepare table information for the prompt
-            tables_info_str = self._format_tables_info(tables_info)
-            
-            # Generate SQL query using OpenAI API
-            prompt = f"""
-            You are an expert in SQL and the WRDS (Wharton Research Data Services) database.
-            Your task is to generate a SQL query based on the following natural language query,
-            using the provided table information.
-            
-            NATURAL LANGUAGE QUERY:
-            {query}
-            
-            TABLE INFORMATION:
-            {tables_info_str}
-            
-            Please generate a SQL query that answers the natural language query.
-            The SQL query should be valid PostgreSQL syntax.
-            Do not use any features or syntax that is not supported by PostgreSQL.
-            
-            Provide your response in the following format:
-            
-            SQL QUERY:
-            <your SQL query here>
-            
-            EXPLANATION:
-            <explanation of how the SQL query answers the natural language query>
-            """
-            
-            response = get_completion(prompt)
-            
-            # Extract SQL query and explanation from response
-            sql_query, explanation = self._extract_sql_and_explanation(response)
-            
-            # Execute the SQL query
-            if sql_query and self.connected:
-                results = self.execute_sql(sql_query)
-                return results, sql_query, explanation
-            else:
-                return pd.DataFrame(), sql_query, explanation
+        if tables_info is None:
+            tables_info = {}
+
+        # Prepare the prompt for the OpenAI API
+        prompt = f"""
+        You are a SQL expert specializing in the WRDS (Wharton Research Data Services) database.
+        Your task is to generate a SQL query based on the following natural language query:
+
+        {query}
+
+        Here is information about the tables that might be relevant:
+
+        {json.dumps(tables_info, indent=2)}
+
+        Important notes for WRDS database:
+        1. If you need to join tables, make sure to use the appropriate join conditions
+        2. If you need to filter by date, use the appropriate date format (YYYY-MM-DD)
+        3. If you need to filter by company name or ticker, make sure to use the exact spelling
+        4. For tables like crsp.dsenames and crsp.msenames, use the columns exactly as they appear in the schema
+        5. The column for name end date is 'nameendt' (not 'nameenddt')
         
-        except Exception as e:
-            self.logger.error(f"Error generating SQL query: {e}")
-            return pd.DataFrame(), "", f"Error generating SQL query: {e}"
+        Provide your response in the following format:
+        ```sql
+        <your SQL query here>
+        ```
+
+        Explanation:
+        <your explanation of the query here>
+        """
+        
+        response = get_completion(prompt)
+        
+        # Extract SQL query and explanation from response
+        sql_query, explanation = self._extract_sql_and_explanation(response)
+        
+        # Execute the SQL query
+        if sql_query and self.connected:
+            results = self.execute_sql(sql_query)
+            return results, sql_query, explanation
+        else:
+            return pd.DataFrame(), sql_query, explanation
     
     def generate_and_execute_sql(self, query: str, tables_info: Dict[str, Dict[str, Any]]) -> Tuple[pd.DataFrame, str, str]:
         """Generate and execute a SQL query based on a natural language query.
@@ -386,15 +380,31 @@ class SQLAgent(BaseAgent):
         sql_query = ""
         explanation = ""
         
-        # Extract SQL query
-        if "SQL QUERY:" in response:
+        # Extract SQL query - check for both formats
+        if "```sql" in response:
+            # New format with markdown code blocks
+            sql_parts = response.split("```sql", 1)[1].split("```", 1)
+            sql_query = sql_parts[0].strip()
+        elif "SQL QUERY:" in response:
+            # Old format
             sql_parts = response.split("SQL QUERY:", 1)[1].split("EXPLANATION:", 1)
             sql_query = sql_parts[0].strip()
         
         # Extract explanation
-        if "EXPLANATION:" in response:
+        if "Explanation:" in response:
+            explanation = response.split("Explanation:", 1)[1].strip()
+        elif "EXPLANATION:" in response:
             explanation = response.split("EXPLANATION:", 1)[1].strip()
         
+        # Fix any column name issues that might still occur
+        # This is a fallback in case the model doesn't follow instructions
+        if "nameenddt" in sql_query and "crsp.dsenames" in sql_query:
+            sql_query = sql_query.replace("nameenddt", "nameendt")
+        if "nameenddt" in sql_query and "crsp.msenames" in sql_query:
+            sql_query = sql_query.replace("nameenddt", "nameendt")
+        if "nameenddt" in sql_query and "crsp.stocknames" in sql_query:
+            sql_query = sql_query.replace("nameenddt", "nameendt")
+            
         return sql_query, explanation
     
     def save_results_to_csv(self, results: pd.DataFrame, query: str) -> str:

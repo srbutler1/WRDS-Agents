@@ -4,33 +4,33 @@ This document provides instructions for using the Autonomous WRDS System, which 
 
 ## Quick Start
 
-1. **Set up environment variables**
-   - Copy the `.env.template` file to `.env`:
-     ```bash
-     cp .env.template .env
-     ```
-   - Edit the `.env` file with your WRDS credentials and OpenAI API key:
-     ```
-     WRDS_USERNAME=your_username
-     WRDS_PASSWORD=your_password
-     OPENAI_API_KEY=sk-your_openai_api_key
-     ```
-
-2. **Install dependencies**
+1. Clone this repository
+2. Install the required dependencies:
    ```bash
    pip install -r requirements.txt
    ```
-
-3. **Run a query**
+3. Create a `.env` file with your credentials (copy from `.env.template`):
+   ```
+   WRDS_USERNAME=your_username
+   WRDS_PASSWORD=your_password
+   OPENAI_API_KEY=your_openai_api_key
+   ```
+4. Verify your setup:
    ```bash
-   python query_wrds.py "Get daily stock returns for Apple (ticker: AAPL) for the year 2022"
+   python test_setup.py
+   ```
+5. Run a query:
+   ```bash
+   python query_wrds.py "get the returns of Apple stock for 2022"
    ```
 
 ## Features
 
-- **Natural Language Queries**: Ask for financial data in plain English
-- **Automatic CSV Storage**: All query results are automatically saved to CSV files in the `data` directory
-- **Interactive Mode**: Enter queries interactively by running `python query_wrds.py` without arguments
+- **Natural Language Queries**: Ask questions in plain English
+- **Automatic SQL Generation**: Converts natural language to SQL
+- **Multi-Agent Architecture**: Coordinates between documentation and SQL agents
+- **CSV Storage**: Automatically saves results to CSV files in the `data` directory
+- **Schema Information**: Uses a pre-extracted schema from WRDS documentation
 
 ## Query Examples
 
@@ -91,9 +91,43 @@ The system uses OpenAI's language models to understand natural language queries 
 
 ## Troubleshooting
 
-- **Connection Issues**: Ensure your WRDS credentials are correct and that you have access to the WRDS database
-- **API Key Issues**: Verify your OpenAI API key is valid and has sufficient quota
-- **Query Errors**: If a query fails, try rephrasing it or providing more specific information
+### Common Issues
+
+1. **Connection Issues**:
+   - Ensure your WRDS credentials are correct in the `.env` file
+   - Check your internet connection
+   - Verify that the WRDS server is operational
+
+2. **No Results Returned**:
+   - Try rephrasing your query to be more specific
+   - Ensure you're querying for data that exists in the WRDS database
+   - Check the SQL query in the output to see if it looks correct
+
+3. **Schema Information**:
+   - If you see "Documentation directory not found" messages, this is normal
+   - The system will use the pre-extracted schema in `wrds_schema.json`
+   - If you have WRDS documentation files, place them in a directory named `WRDS Documentation` in the parent directory
+
+4. **Module Not Found Errors**:
+   - Ensure you've installed all dependencies with `pip install -r requirements.txt`
+   - Some modules like `wrds` may require additional system dependencies
+
+### Verifying Your Setup
+
+Run the test_setup.py script to verify your environment is correctly configured:
+
+```bash
+python test_setup.py
+```
+
+This script checks for:
+- Required environment variables
+- Data directory existence
+- Required Python modules
+
+### Getting Help
+
+If you encounter issues not covered here, please check the WRDS documentation or contact your WRDS administrator for assistance with database-specific questions.
 
 ## License
 

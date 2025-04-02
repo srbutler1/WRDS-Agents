@@ -11,8 +11,9 @@ import json
 import sys
 from pathlib import Path
 
-# Get the correct path to the schema JSON file
-schema_json_path = "/Users/appleowner/Downloads/FDA II/Demo Agent/Agents/wrds_schema.json"
+# Get the paths
+base_dir = Path(__file__).parent.parent
+schema_json_path = base_dir / "wrds_schema.json"
 
 # Load the schema directly from the JSON file
 print(f"Loading schema from: {schema_json_path}")
